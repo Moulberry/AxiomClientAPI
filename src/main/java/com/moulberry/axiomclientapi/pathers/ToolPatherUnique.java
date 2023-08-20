@@ -4,6 +4,6 @@ import com.moulberry.axiomclientapi.funcinterfaces.TriIntConsumer;
 
 public interface ToolPatherUnique {
 
-    void update(TriIntConsumer consumer);
+    boolean update(TriIntConsumer consumer);
 
 }

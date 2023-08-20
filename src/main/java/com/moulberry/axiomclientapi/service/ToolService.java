@@ -2,7 +2,9 @@ package com.moulberry.axiomclientapi.service;
 
 import com.moulberry.axiomclientapi.regions.BlockRegion;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ForkJoinPool;
@@ -10,6 +12,8 @@ import java.util.concurrent.ForkJoinPool;
 public interface ToolService {
 
     void pushBlockRegionChange(BlockRegion blockRegion);
+
+    @Nullable BlockHitResult raycastBlock();
 
     BlockState getActiveBlock();
     Vec3 getLookDirection();

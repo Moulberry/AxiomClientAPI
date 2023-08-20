@@ -10,32 +10,38 @@ public interface CustomTool {
      * Called whenever the tool is selected/deselected
      * Can also be called manually after an operation is finished
      */
-    void reset();
+    default void reset() {}
 
     /**
      * Called every render frame
      */
-    void render(Camera camera, float tickDelta, long time, PoseStack poseStack, Matrix4f projection);
+    default void render(Camera camera, float tickDelta, long time, PoseStack poseStack, Matrix4f projection) {}
 
     /**
      * Called when the player uses the tool (default keybind: Right Mouse)
-     * @return whether to pass the input on to other systems (eg. selection, clipboard)
+     * @return whether to consume the input, preventing it from being passed on
      */
-    boolean callUseTool();
+    default boolean callUseTool() {
+        return false;
+    }
 
     /**
      * Called when the player 'confirms' something (default keybind: Enter)
-     * @return whether to pass the input on to other systems (eg. selection, clipboard)
+     * @return whether to consume the input, preventing it from being passed on
      */
-    boolean callConfirm();
+    default boolean callConfirm() {
+        return false;
+    }
 
     /**
      * Called when the player 'deletes' something (default keybind: Delete)
-     * @return whether to pass the input on to other systems (eg. selection, clipboard)
+     * @return whether to consume the input, preventing it from being passed on
      */
-    boolean callDelete();
+    default boolean callDelete() {
+        return false;
+    }
 
-    void displayImguiOptions();
+    default void displayImguiOptions() {}
     String name();
 
 }
