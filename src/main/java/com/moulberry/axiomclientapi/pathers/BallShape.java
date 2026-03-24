@@ -140,7 +140,9 @@ public abstract class BallShape {
     public abstract void fillRegion(BooleanRegion region, int radius);
     public abstract float distanceSq(int x, int y, int z);
     public abstract String getName();
-    public abstract int getMaxRadiusForLivePreview();
+    public int getMaxRadiusForLivePreview() {
+        return 25;
+    }
 
     public static BallShape getByIndex(int index) {
         return switch (index) {

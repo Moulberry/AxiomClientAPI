@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.3-SNAPSHOT'
+	id 'net.fabricmc.fabric-loom' version '1.15-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -20,7 +20,6 @@ repositories {
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings loom.officialMojangMappings()
 
     api(group: 'io.github.spair', name: 'imgui-java-binding', version: '1.86.10')
 }
@@ -37,14 +36,6 @@ java {
 
 	sourceCompatibility = JavaVersion.VERSION_17
 	targetCompatibility = JavaVersion.VERSION_17
-}
-
-jar {
-    manifest {
-        attributes(
-            "Fabric-Loom-Remap": "true"
-        )
-    }
 }
 
 publishing {
