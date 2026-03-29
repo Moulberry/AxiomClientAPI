@@ -1,9 +1,5 @@
 package com.moulberry.axiomclientapi;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.Camera;
-import org.joml.Matrix4f;
-
 public interface CustomTool {
 
     /**
@@ -15,7 +11,7 @@ public interface CustomTool {
     /**
      * Called every render frame
      */
-    default void render(Camera camera, float tickDelta, long time, PoseStack poseStack, Matrix4f projection) {}
+    default void render(IAxiomWorldRenderContext rc) {}
 
     /**
      * Called when the player uses the tool (default keybind: Right Mouse)
