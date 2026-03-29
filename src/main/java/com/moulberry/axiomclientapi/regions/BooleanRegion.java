@@ -6,7 +6,7 @@ import net.minecraft.world.phys.Vec3;
 
 public interface BooleanRegion {
 
-    void render(IAxiomWorldRenderContext rc, Vec3 translation, long time, int effects);
+    void render(IAxiomWorldRenderContext rc, Vec3 translation, int effects);
     void forEach(TriIntConsumer consumer);
 
     boolean add(int x, int y, int z);
